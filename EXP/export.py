@@ -1,8 +1,8 @@
 import os
 
 # Set the range of folder numbers
-start = 271
-end = 278
+start = int(input("Enter the starting number: "))
+end = int(input("Enter the ending number: "))
 
 # Loop through and create folders
 for i in range(start, end + 1):
