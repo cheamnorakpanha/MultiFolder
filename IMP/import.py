@@ -12,3 +12,7 @@ for i in range(start, end + 1):
         print(f"Created folder: {folder_name}")
     except Exception as e:
         print(f"Failed to create {folder_name}: {e}")
+
+print("======================================")
+print("  => Total folders created so far:", i - start + 1)
+print("======================================")
