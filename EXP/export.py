@@ -1,20 +1,27 @@
 import os
 
-# Set the range of folder numbers
-start = int(input("Enter the starting number: "))
-end = int(input("Enter the ending number: "))
+# String inputs
+start = input("Enter the starting number: ")
+end = input("Enter the ending number: ")
 
-# Loop through and create folders
-for i in range(start, end + 1):
-    folder_name = f"RE-{i}-2026"
+# Convert to int only for looping
+start_int = int(start)
+end_int = int(end)
+
+# Get length for zero-padding (e.g. 001)
+width = len(start)
+
+for i in range(start_int, end_int + 1):
+    folder_name = str(i).zfill(width)
+    folder_name = f"RE-{folder_name}-2026"
+
     try:
         os.makedirs(folder_name, exist_ok=True)
         print(f"Created folder: {folder_name}")
-        # print("Total folders created so far:", i - start + 1)
     except Exception as e:
-        print(f"Failed to create {folder_name}: {e}")
+        print(f"Error creating folder {folder_name}: {e}")
 
 # We use i - start + 1 to count the total folders created
 print("======================================")
-print("  => Total folders created so far:", i - start + 1)
+print("  => Total folders created so far:", end_int - start_int + 1)
 print("======================================")
