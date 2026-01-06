@@ -6,7 +6,7 @@ end = int(input("Enter the ending number: "))
 
 # Loop through and create folders
 for i in range(start, end + 1):
-    folder_name = f"RE-{i}-2025"
+    folder_name = f"RE-{i}-2026"
     try:
         os.makedirs(folder_name, exist_ok=True)
         print(f"Created folder: {folder_name}")
